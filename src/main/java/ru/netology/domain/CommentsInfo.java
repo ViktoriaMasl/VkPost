@@ -6,6 +6,7 @@ public class CommentsInfo {
     private boolean canOpenComments; //может ли пользователь открыть все комментарии
     private boolean canCloseComments; //может ли пользователь закрыть комментарии к записи
     private boolean likeComment; //может ли пользователь лайкнуть комментарий
+    private boolean canGroupsComment; //могут ли сообщества комментировать запись
 
     public int getCount() {
         return count;
@@ -45,5 +46,13 @@ public class CommentsInfo {
 
     public void setLikeComment(boolean likeComment) {
         this.likeComment = likeComment;
+    }
+
+    public boolean isCanGroupsComment() {
+        return canGroupsComment;
+    }
+
+    public void setCanGroupsComment(boolean canGroupsComment) {
+        this.canGroupsComment = canGroupsComment;
     }
 }

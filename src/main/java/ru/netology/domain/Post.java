@@ -3,7 +3,8 @@ package ru.netology.domain;
 public class Post {
 
     private int postId; //идентиф. номер поста
-    private int ownerId; //идентиф. номер собственника странцы
+    private int ownerId; //идентиф. номер собственника страницы
+    private int signerId; //идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем
     private AuthorInfo authorInfo; //данные автора
     private double data; //время создания поста
     private String device; //устройство, с которого сделан пост
@@ -15,6 +16,9 @@ public class Post {
     private double friendsOnly; //запись могут видеть только друзья
     private String thematicsPost; //тематика записи
     private boolean fixPost; //запись закреплена
+    private boolean canPin; //информация о том, может ли текущий пользователь закрепить запись
+    private boolean canDelete; //информация о том, может ли текущий пользователь удалить запись
+    private boolean canEdit; //информация о том, может ли текущий пользователь редактировать запись
     private boolean notComment; //комментарии записи отключены
     private boolean noNotificationsPost; //не отправлять уведомления по активности на данном посте
     private int copyrightId; //источник публикации
@@ -22,14 +26,14 @@ public class Post {
     private CommentsInfo commentsInfo; //информация о комментариях
     private RepostInfo repostInfo; //информация о репостах
     private int viewCount; //количество просмотров
+    private PostSource postSource; //информация об источнике поста
+    private boolean markedAsAds; //информация о том, содержит ли запись отметку "реклама"
+    private boolean isFavorite; //true, если объект добавлен в закладки у текущего пользователя
+    private VkDonut vkDonut; //информация о записи VK Donut
 
-    public int getPostId() {
-        return postId;
-    }
+    public int getPostId() { return postId; }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
-    }
+    public void setPostId(int postId) { this.postId = postId; }
 
     public int getOwnerId() {
         return ownerId;
@@ -45,6 +49,14 @@ public class Post {
 
     public void setAuthorInfo(AuthorInfo authorInfo) {
         this.authorInfo = authorInfo;
+    }
+
+    public int getSignerId() {
+        return signerId;
+    }
+
+    public void setSignerId(int signerId) {
+        this.signerId = signerId;
     }
 
     public double getData() {
@@ -91,9 +103,7 @@ public class Post {
         return postType;
     }
 
-    public void setPostType(String postType) {
-        this.postType = postType;
-    }
+    public void setPostType(String postType) { this.postType = postType; }
 
     public double getPostTimer() {
         return postTimer;
@@ -119,12 +129,34 @@ public class Post {
         this.thematicsPost = thematicsPost;
     }
 
-    public boolean isFixPost() {
-        return fixPost;
-    }
+    public boolean isFixPost() { return fixPost; }
 
     public void setFixPost(boolean fixPost) {
         this.fixPost = fixPost;
+    }
+
+    public boolean isCanPin() {
+        return canPin;
+    }
+
+    public void setCanPin(boolean canPin) {
+        this.canPin = canPin;
+    }
+
+    public boolean isCanDelete() {
+        return canDelete;
+    }
+
+    public void setCanDelete(boolean canDelete) {
+        this.canDelete = canDelete;
+    }
+
+    public boolean isCanEdit() {
+        return canEdit;
+    }
+
+    public void setCanEdit(boolean canEdit) {
+        this.canEdit = canEdit;
     }
 
     public boolean isNotComment() {
@@ -182,4 +214,32 @@ public class Post {
     public void setViewCount(int viewCount) {
         this.viewCount = viewCount;
     }
+
+    public PostSource getPostSource() {
+        return postSource;
+    }
+
+    public void setPostSource(PostSource postSource) {
+        this.postSource = postSource;
+    }
+
+    public boolean isMarkedAsAds() {
+        return markedAsAds;
+    }
+
+    public void setMarkedAsAds(boolean markedAsAds) {
+        this.markedAsAds = markedAsAds;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
+
+    public VkDonut getVkDonut() { return vkDonut; }
+
+    public void setVkDonut(VkDonut vkDonut) { this.vkDonut = vkDonut; }
 }
