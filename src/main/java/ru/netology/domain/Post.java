@@ -6,7 +6,7 @@ public class Post {
     private int ownerId; //идентиф. номер собственника страницы
     private int signerId; //идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем
     private AuthorInfo authorInfo; //данные автора
-    private double data; //время создания поста
+    private int data; //время создания поста
     private String device; //устройство, с которого сделан пост
     private String text; //текст поста
     private String attachmentsPost; //вложения (ссылки, изображения, музыка и пр.)
@@ -31,9 +31,13 @@ public class Post {
     private boolean isFavorite; //true, если объект добавлен в закладки у текущего пользователя
     private VkDonut vkDonut; //информация о записи VK Donut
 
-    public int getPostId() { return postId; }
+    public int getPostId() {
+        return postId;
+    }
 
-    public void setPostId(int postId) { this.postId = postId; }
+    public void setPostId(int postId) {
+        this.postId = postId;
+    }
 
     public int getOwnerId() {
         return ownerId;
@@ -59,11 +63,11 @@ public class Post {
         this.signerId = signerId;
     }
 
-    public double getData() {
+    public int getData() {
         return data;
     }
 
-    public void setData(double data) {
+    public void setData(int data) {
         this.data = data;
     }
 
@@ -103,7 +107,9 @@ public class Post {
         return postType;
     }
 
-    public void setPostType(String postType) { this.postType = postType; }
+    public void setPostType(String postType) {
+        this.postType = postType;
+    }
 
     public double getPostTimer() {
         return postTimer;
@@ -129,7 +135,9 @@ public class Post {
         this.thematicsPost = thematicsPost;
     }
 
-    public boolean isFixPost() { return fixPost; }
+    public boolean isFixPost() {
+        return fixPost;
+    }
 
     public void setFixPost(boolean fixPost) {
         this.fixPost = fixPost;
@@ -239,7 +247,11 @@ public class Post {
         isFavorite = favorite;
     }
 
-    public VkDonut getVkDonut() { return vkDonut; }
+    public VkDonut getVkDonut() {
+        return vkDonut;
+    }
 
-    public void setVkDonut(VkDonut vkDonut) { this.vkDonut = vkDonut; }
+    public void setVkDonut(VkDonut vkDonut) {
+        this.vkDonut = vkDonut;
+    }
 }
